@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <body>
-        <h2>
+        <h1>
             Welcome to Flask Web Application
-        </h2>
+        </h1>
         <form action="/submit" method="post">
             <label for="Science">SCIENCE : </label>
             <input type="text" id="science" name="science" value="0"><br><br>
@@ -13,7 +14,7 @@
             <input type="text" id="english" name="english" value="0"><br><br>
             <label for="Social">SOCIALSCIENCE : </label>
             <input type="text" id="social" name="social" value="0"><br><br>
-            <input type="submit" value="submit">
+            <input type="submit" value="submit" style='width:100px;margin:0 10%;position:relative;left:-50px;'>
 
         </form>
 

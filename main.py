@@ -1,3 +1,12 @@
+'''
+jinja 2 template engine
+
+{%....%} -> conditions, for loops
+{{ }} -> to get the parameter
+{#....#} -> for comments
+'''
+
+
 from flask import Flask, redirect, url_for, render_template, request
 
 '''WSGI application is created for communication between web applocation and web server'''
@@ -12,10 +21,12 @@ def welcome():
 def success(score):
     res = ""
     if score >= 50:
-        res='PASS'
+        res='Pass'
     else:
-        res='FAIL'
-    return render_template ('result.html',result=res)
+        res='Fail'
+        
+    res_dict = {"Score":score, "Result":res}
+    return render_template ('result.html',result=res_dict)
 
 @app.route('/submit',methods=['GET','POST'])
 def submit():

@@ -1,8 +1,31 @@
 <html>
-    <h1> 
-        Final Results
-    </h1>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <script type="text/javascript" src="{{ url_for('static', filename='script/jscript.js') }}">
+           
+        </script>
+    </head>
+        <h1> 
+            Final Results
+        </h1>
+
     <body>
-        The output is {{ result }}
+        <table border="5">
+            {% for key,values in result.items() %}
+            <tr>
+                <th>
+                    {{ key }}
+                </th>
+                <th>
+                    {{ values }}
+                </th>
+            </tr>
+            {% endfor %}
+        </table>
+        {# this is commented out {% if result >= 50 %}
+        <h3>Your have passed.</h3>
+        {% else %}
+        <h3>You have failed.</h3>
+        {% endif %} #}
     </body>
 </html>
